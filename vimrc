@@ -1,4 +1,4 @@
-execute pathogen#infect()
+"execute pathogen#infect()
 
 syntax on                       " enable syntax processing
 filetype plugin indent on       " load filetype-specific indent files
@@ -13,9 +13,9 @@ colorscheme gruvbox
 
 
 " SPACES/TABS
-set tabstop=2           " width of a TAB
+set tabstop=4           " width of a TAB
 "set softtabstop=2       " number of columns in TAB
-set shiftwidth=2        " number of spaces to use for each indent '>'
+set shiftwidth=4        " number of spaces to use for each indent '>'
 set expandtab           " use spaces instead of TABs
 
 
@@ -81,33 +81,33 @@ let g:airline_theme = 'base16_default'
 " -----------AIRLINE-------------
 
 " -----------CtrlP---------------
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlPBuffer'
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_switch_buffer = 'et'
-let g:ctrlp_lazy_update = 500
-let g:ctrlp_user_command = {
-  \ 'types': {
-    \ 1: ['.git', 'cd %s && git ls-files -co --exclude-standard'],
-    \ 2: ['.hg', 'hg --cwd %s locate -I .'],
-  \ },
-  \ 'fallback': 'find %s -type f'
-\ }
+"let g:ctrlp_map = '<c-p>'
+"let g:ctrlp_cmd = 'CtrlPBuffer'
+"let g:ctrlp_working_path_mode = 'ra'
+"let g:ctrlp_switch_buffer = 'et'
+"let g:ctrlp_lazy_update = 500
+"let g:ctrlp_user_command = {
+"  \ 'types': {
+"    \ 1: ['.git', 'cd %s && git ls-files -co --exclude-standard'],
+"    \ 2: ['.hg', 'hg --cwd %s locate -I .'],
+"  \ },
+"  \ 'fallback': 'find %s -type f'
+"\ }
 " -----------CtrlP---------------
 
 " -----------SYNTASTIC-----------
-map <Leader>c :SyntasticToggleMode<CR>
+"map <Leader>c :SyntasticToggleMode<CR>
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 0
+"let g:syntastic_check_on_open = 0
+"let g:syntastic_check_on_wq = 0
 
-let g:syntastic_go_checkers = ['go']
+"let g:syntastic_go_checkers = ['go']
 " -----------SYNTASTIC-----------
 
 "map <Leader>n :NERDTreeToggle<CR>

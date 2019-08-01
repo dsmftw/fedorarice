@@ -13,6 +13,8 @@
 	trustExitCode = false
 [alias]
 	st = status
+	br = branch -avv
+	adog = log --all --decorate --oneline --graph
 [credential]
 	helper = cache --timeout=7200
 [github]

@@ -1,15 +1,21 @@
-# /etc/skel/.bashrc
-#
-# Test for an interactive shell.
-if [[ $- != *i* ]] ; then
-  return
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
 fi
 
+# User specific environment
+PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+export PATH
 
-# Path vars
-NPMPATH=$HOME/.npm-global
-export GOPATH=$HOME/.golang
-export PATH=$PATH:$GOPATH/bin:$NPMPATH/bin
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
+
+# Custom prompt
+export PS1='\[\e[1;32m\]\u@\h \[\e[1;34m\]\w \$ \[\e[0m\]'
 
 # Aliases
 cp () { command cp -v "$@" ; }
@@ -23,19 +29,42 @@ alias la='ls -lA'
 alias vimrc='vim $HOME/dotfiles/vimrc'
 alias bashrc='vim $HOME/dotfiles/bashrc'
 alias dosmth='$(find ~/dotfiles/colorscripts/ -type f | shuf -n 1)'
-alias dots='cd $HOME/dotfiles'
-alias code='cd $HOME/codebase'
+alias cddots='cd $HOME/dotfiles'
+alias cdcode='cd $HOME/codebase'
 
 # Bash history
 export HISTFILESIZE=-1
 export HISTSIZE=-1
 export HISTTIMEFORMAT="[%F %T] "
-export HISTIGNORE="history*:pwd:ls:ll:la:df*:du*:bashrc*:vimrc*"
+export HISTIGNORE="history*:pwd:ll:la"
 export HISTCONTROL=ignoreboth:erasedups
 shopt -s histappend
 
 # Get weather for city/airport
 function weather() { curl -s wttr.in/"$*"?lang=ru | grep -vE "feature|Follow"; }
+
+# Postgres activity monitor; pass args: username hostname
+pgactivity () { $HOME/python-2.7.12/bin/pg_activity -U "$1" -h "$2" -d postgres; }
+
+# Delete provided range from history
+rmhist () {
+  start=$1
+  end=$2
+  count=$(( end - start ))
+  while [ $count -ge 0 ] ; do
+    history -d $start
+    ((count--))
+  done
+}
+
+# Count numfiles numdirs
+numfiles () {
+  fcnt="$(find $1 -maxdepth 1 -type f | wc -l)";
+  echo "$fcnt files in $1";
+}
+
+# Count number of lines in all files in curr dir
+numlines () { ( find ./ -type f -name "*.$1" -print0 | xargs -0 cat ) | wc -l; }
 
 # Super extractor
 extract () {
