@@ -6,7 +6,8 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # User specific environment
-PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+NPMPATH="$HOME/.npm-global"
+PATH="$NPMPATH/bin:$HOME/.local/bin:$HOME/bin:$PATH"
 export PATH
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
