@@ -38,7 +38,7 @@ alias cdcode='cd $HOME/codebase'
 export HISTFILESIZE=-1
 export HISTSIZE=-1
 export HISTTIMEFORMAT="[%F %T] "
-export HISTIGNORE="history*:pwd:ll:la"
+export HISTIGNORE="history*:pwd:ls:ll:la:cd"
 export HISTCONTROL=ignoreboth:erasedups
 shopt -s histappend
 

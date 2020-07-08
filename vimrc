@@ -68,6 +68,11 @@ inoremap {<CR> {<CR>}<C-o>O
 inoremap {;<CR> {<CR>};<C-o>O
 
 
+" MOVE HIGHLIGHTED BLOCK
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+
 " TOGGLE SPELL-CHECKING
 nmap <silent> <Leader>s :set spell!<CR>
 
