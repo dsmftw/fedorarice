@@ -6,8 +6,9 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # User specific environment
-NPMPATH="$HOME/.npm-global"
-PATH="$NPMPATH/bin:$HOME/.local/bin:$HOME/bin:$PATH"
+#NPMPATH="$HOME/.npm-global"
+#PATH="$NPMPATH/bin:$HOME/.local/bin:$HOME/bin:$PATH"
+PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 export PATH
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
@@ -45,7 +46,7 @@ shopt -s histappend
 function weather() { curl -s wttr.in/"$*"?lang=ru | grep -vE "feature|Follow"; }
 
 # Postgres activity monitor; pass args: username hostname
-pgactivity () { $HOME/python-2.7.12/bin/pg_activity -U "$1" -h "$2" -d postgres; }
+#pgactivity () { $HOME/python-2.7.12/bin/pg_activity -U "$1" -h "$2" -d postgres; }
 
 # Delete provided range from history
 rmhist () {
@@ -90,6 +91,8 @@ extract () {
 }
 
 # Base16 Shell
-BASE16_SHELL=$HOME/.config/base16-shell/
-[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] && \
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+        eval "$("$BASE16_SHELL/profile_helper.sh")"
 

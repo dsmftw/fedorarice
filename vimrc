@@ -77,7 +77,7 @@ nmap <silent> <Leader>s :set spell!<CR>
 " -----------AIRLINE-------------
 set laststatus=2        " enable airline
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'base16_default'
+let g:airline_theme = 'gruvbox'
 " -----------AIRLINE-------------
 
 " -----------CtrlP---------------
