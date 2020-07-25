@@ -5,10 +5,10 @@
 
 ## Setup details
 
-* OS `Fedora`
+* OS `Fedora 31`
 * Windowing System `Wayland`
 * DE `GNOME`
-* WM `GNOME Shell`
+* WM `GNOME Shell/X11`
 * Shell `bash`
 * Terminal emulator `gnome-terminal`
 * Terminal multiplexer `tmux`
@@ -49,7 +49,7 @@ Start with cloning plugins of choice.
 Clone dotfiles:
 
 ```bash
-git clone https://github.com/dsmftw/dotfiles.git ~/dotfiles
+git clone https://github.com/dsmftw/fedorarice.git ~/dotfiles
 ```
 
 Run script to create symlinks:
