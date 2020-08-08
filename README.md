@@ -2,13 +2,14 @@
 
 * dotfiles for Fedora
 * bootstrap script
+* tmux statusbar scripts
 
 ## Setup details
 
 * OS `Fedora 31`
-* Windowing System `Wayland`
+* Windowing System `X11`
 * DE `GNOME`
-* WM `GNOME Shell/X11`
+* WM `GNOME Shell`
 * Shell `bash`
 * Terminal emulator `gnome-terminal`
 * Terminal multiplexer `tmux`
