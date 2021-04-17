@@ -17,7 +17,11 @@ export PATH
 # User specific aliases and functions
 
 # Custom prompt
-export PS1='\[\e[1;32m\]\u@\h \[\e[1;34m\]\w \$ \[\e[0m\]'
+if [[ "$TERM" =~ 256color ]]; then
+    export PS1='\[\e[1;31m\][\[\e[1;33m\]\u\[\e[0;37m\]@\[\e[1;32m\]\h \[\e[0;35m\]\w\[\e[1;31m\]]\[\e[1;37m\]\$ \[\e[0m\]'
+else
+    export PS1='[\u@\h \w]\$ '
+fi
 
 # Aliases
 cp () { command cp -v "$@" ; }
@@ -91,8 +95,8 @@ extract () {
 }
 
 # Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/"
-[ -n "$PS1" ] && \
-    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-        eval "$("$BASE16_SHELL/profile_helper.sh")"
+#BASE16_SHELL="$HOME/.config/base16-shell/"
+#[ -n "$PS1" ] && \
+#    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+#        eval "$("$BASE16_SHELL/profile_helper.sh")"
 

@@ -20,3 +20,5 @@
 	helper = cache --timeout=7200
 [github]
 	user = dsmftw
+[pull]
+	ff = only

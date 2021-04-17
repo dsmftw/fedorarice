@@ -3,16 +3,7 @@
 src="$HOME"/dotfiles
 dst="$HOME"
 declare -a files=(
-"bashrc" "gitconfig" "tmux.conf" "vimrc" "xinitrc" "Xresources"
-"config/redshift.conf"
-"config/autostart/conky.desktop"
-"config/conky/conky.conf"
-"config/mpd/mpd.conf"
-"config/mpv/mpv.conf"
-"config/ncmpcpp/config"
-"config/ranger/rc.conf"
-"config/ranger/scope.sh"
-"config/zathura/zathurarc"
+"bashrc" "gitconfig" "tmux.conf" "vimrc"
 "newsboat/config"
 )
 
